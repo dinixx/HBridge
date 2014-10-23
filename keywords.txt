@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map PonteH
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+HBridge	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+getDirection	KEYWORD2
+setDirection	KEYWORD2
+getSpeed	KEYWORD2
+setSpeed	KEYWORD2
+invertDirection	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+CW	LITERAL1
+CCW	LITERAL1
