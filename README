@@ -1,0 +1,12 @@
+This library provide a simple way to control a simple H bridge.
+The circuit of the H bridge is in the base folder.
+WARNING: this library may cause damage to bridges with diferent setup.
+
+To use the library, conect two pwm pins of Arduino to the inputs pwmA and pwmB
+of the bridge.
+
+There is an example showing how to use the library with arduino.
+
+More on https://github.com/dinixx/HBridge
+
+Mail to: diegohenrix@gmail.com
