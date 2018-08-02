@@ -21,6 +21,19 @@ void HBridge::setDirection(int direction)
   if (CW == direction || CCW == direction)
   {
     _direction = direction;
+    setSpeed(getSpeed());
+  }
+}
+
+void HBridge::invertDirection()
+{
+  if (CW == _direction)
+  {
+    setDirection(CCW);
+  }
+  else
+  {
+    setDirection(CW);
   }
 }
 
@@ -37,25 +50,13 @@ void HBridge::setSpeed(int speed)
 
     if (CW == _direction)
     {
-      analogWrite(_pwmA, _speed);
       analogWrite(_pwmB, 0);
+      analogWrite(_pwmA, _speed);
     }
     else
     {
       analogWrite(_pwmA, 0);
       analogWrite(_pwmB, _speed);
     }
-  }
-}
-
-void HBridge::invertDirection()
-{
-  if (CW == _direction)
-  {
-    _direction = CCW;
-  }
-  else
-  {
-    _direction = CW;
   }
 }
