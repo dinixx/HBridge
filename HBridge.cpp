@@ -7,8 +7,12 @@ HBridge::HBridge(int pwmA, int pwmB)
   _pwmB = pwmB;
   _direction = CW;
   _speed = 0;
-  analogWrite(_pwmA, 0);
-  analogWrite(_pwmB, 0);
+  //analogWrite(_pwmA, 0);
+  pinMode(_pwmA, OUTPUT);
+  digitalWrite(_pwmA, LOW);
+  //analogWrite(_pwmB, 0);
+  pinMode(_pwmB, OUTPUT);
+  digitalWrite(_pwmB, LOW);
 }
 
 int HBridge::getDirection()
@@ -50,12 +54,16 @@ void HBridge::setSpeed(int speed)
 
     if (CW == _direction)
     {
-      analogWrite(_pwmB, 0);
+      //analogWrite(_pwmB, 0);
+      pinMode(_pwmB, OUTPUT);
+      digitalWrite(_pwmB, LOW);
       analogWrite(_pwmA, _speed);
     }
     else
     {
-      analogWrite(_pwmA, 0);
+      //analogWrite(_pwmA, 0);
+      pinMode(_pwmA, OUTPUT);
+      digitalWrite(_pwmA, LOW);
       analogWrite(_pwmB, _speed);
     }
   }
